@@ -1,2 +1,2 @@
-# PROGRAMAS_EM_DELPHI
+# ESTUDOS_EM_DELPHI
 Repositório sobre meus estudos de DELPHI
