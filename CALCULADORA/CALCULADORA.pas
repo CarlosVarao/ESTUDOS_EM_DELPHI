@@ -30,6 +30,10 @@ type
     BTN_SOMAR: TButton;
     BTN_IGUAL: TButton;
     BTN_LIMPAR: TButton;
+    procedure BTN_01Click(Sender: TObject);
+    procedure BTN_02Click(Sender: TObject);
+    procedure BTN_SOMARClick(Sender: TObject);
+    procedure BTN_LIMPARClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -43,6 +47,48 @@ implementation
 
 {$R *.dfm}
 
+procedure TTELA_CALCULADORA.BTN_01Click(Sender: TObject);
+begin
 
+   if label_Resultado.Caption = '0' then
+  begin
+    label_Resultado.Caption := '1'
+  end
+
+  else
+  begin
+      label_Resultado.Caption := label_Resultado.Caption + '1';
+  end;
+
+end;
+
+procedure TTELA_CALCULADORA.BTN_02Click(Sender: TObject);
+begin
+
+   if label_Resultado.Caption = '0' then
+  begin
+    label_Resultado.Caption := '2'
+  end
+
+  else
+  begin
+      label_Resultado.Caption := label_Resultado.Caption + '2';
+  end;
+
+end;
+
+procedure TTELA_CALCULADORA.BTN_LIMPARClick(Sender: TObject);
+begin
+
+  label_Resultado.Caption := '0'
+
+end;
+
+procedure TTELA_CALCULADORA.BTN_SOMARClick(Sender: TObject);
+begin
+
+    label_Resultado.Caption := label_Resultado.Caption + '+';
+
+end;
 
 end.

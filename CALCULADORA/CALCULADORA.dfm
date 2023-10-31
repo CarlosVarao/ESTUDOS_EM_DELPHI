@@ -1,9 +1,11 @@
 object TELA_CALCULADORA: TTELA_CALCULADORA
   Left = 0
   Top = 0
+  BorderIcons = [biSystemMenu, biMinimize]
+  BorderStyle = bsSingle
   Caption = 'CALCULADORA'
-  ClientHeight = 417
-  ClientWidth = 378
+  ClientHeight = 416
+  ClientWidth = 374
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -12,8 +14,8 @@ object TELA_CALCULADORA: TTELA_CALCULADORA
   Font.Style = []
   TextHeight = 15
   object label_DireitosAutorais: TLabel
-    Left = 0
-    Top = 385
+    Left = -1
+    Top = 379
     Width = 380
     Height = 33
     Alignment = taCenter
@@ -34,12 +36,13 @@ object TELA_CALCULADORA: TTELA_CALCULADORA
     Height = 73
     TabOrder = 0
     object label_Resultado: TLabel
-      Left = 32
-      Top = 32
+      Left = 23
+      Top = 34
       Width = 345
       Height = 33
       Alignment = taRightJustify
       AutoSize = False
+      Caption = '0'
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -27
@@ -62,6 +65,7 @@ object TELA_CALCULADORA: TTELA_CALCULADORA
       Height = 49
       Caption = '1'
       TabOrder = 0
+      OnClick = BTN_01Click
     end
     object BTN_04: TButton
       Left = 41
@@ -94,6 +98,7 @@ object TELA_CALCULADORA: TTELA_CALCULADORA
       Height = 49
       Caption = '2'
       TabOrder = 4
+      OnClick = BTN_02Click
     end
     object BTN_05: TButton
       Left = 121
@@ -182,6 +187,7 @@ object TELA_CALCULADORA: TTELA_CALCULADORA
       Height = 49
       Caption = '+'
       TabOrder = 15
+      OnClick = BTN_SOMARClick
     end
     object BTN_IGUAL: TButton
       Left = 41
@@ -198,6 +204,7 @@ object TELA_CALCULADORA: TTELA_CALCULADORA
       Height = 49
       Caption = 'LIMPAR'
       TabOrder = 17
+      OnClick = BTN_LIMPARClick
     end
   end
 end
