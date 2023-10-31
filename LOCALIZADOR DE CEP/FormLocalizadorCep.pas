@@ -1,0 +1,154 @@
+unit FormLocalizadorCep;
+
+interface
+
+uses
+  REST.Response.Adapter, IdHTTP, System.JSON, Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, REST.Types, Data.Bind.Components, Data.Bind.ObjectScope, REST.Client, IdBaseComponent,
+  IdComponent, IdTCPConnection, IdTCPClient, Vcl.ExtCtrls;
+
+type
+  TForm1 = class(TForm)
+    TITLE_LOCALIZADOR: TLabel;
+    INPUT_NUMBER_CEP: TEdit;
+    BTN_BUSCAR: TButton;
+    conteiner_Logo: TPanel;
+    conteiner_Busca: TGroupBox;
+    RESTClient1: TRESTClient;
+    RESTRequest1: TRESTRequest;
+    RESTResponse1: TRESTResponse;
+    BTN_LIMPAR: TButton;
+    conteiner_Resultado: TGroupBox;
+    label_Cep: TLabel;
+    label_Logradouro: TLabel;
+    label_Localidade: TLabel;
+    memo_Cep: TMemo;
+    memo_Logradouro: TMemo;
+    memo_Localidade: TMemo;
+    label_Uf: TLabel;
+    memo_Uf: TMemo;
+    memo_DDD: TMemo;
+    label_DDD: TLabel;
+    label_Ibge: TLabel;
+    label_Bairro: TLabel;
+    memo_Ibge: TMemo;
+    memo_Bairro: TMemo;
+    label_Siafi: TLabel;
+    memo_Siafi: TMemo;
+    Label1: TLabel;
+    procedure BTN_BUSCARClick(Sender: TObject);
+    procedure BTN_LIMPARClick(Sender: TObject);
+    procedure INPUT_NUMBER_CEPKeyPress(Sender: TObject; var Key: Char);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+
+// Evento do acionamento do BTN buscar.
+procedure TForm1.BTN_BUSCARClick(Sender: TObject);
+
+  // Variavel para coletar os dados do CEP na input.
+  var
+  cep: string;
+
+  // Variaveis para coletar os dados do JSON.
+  JSONData: string;
+  JSONObj: TJSONObject;
+
+begin
+
+  // Colotando os numeros do CEP dentro  campo.
+  cep := INPUT_NUMBER_CEP.Text;
+
+
+  // Teste logico para saber se o numero é valido.
+  if (Length(INPUT_NUMBER_CEP.Text) < 7) then
+    Begin
+
+       Application.MessageBox('Por favor Digite o CEP correto!','ERRO DE BUSCA !');
+
+    End
+
+  // Teste logico para fazzer a função de coletar as IF do cep.
+  else
+    begin
+
+      // Função para coletar os dados da API
+      RESTClient1.BaseURL := 'https://viacep.com.br/ws/' + cep + '/json';
+      RESTRequest1.Execute;
+
+
+      // Função para coletar os dados da API e converter o JSON p/ extração de dados.
+      JSONData := RESTResponse1.Content;
+      JSONObj := TJSONObject.ParseJSONValue(JSONData) as TJSONObject;
+
+
+      // Função para coletar dadpos do JSON para variavel.
+      memo_Cep.Text :=  JSONObj.GetValue('cep').Value;
+      memo_Logradouro.Text :=  JSONObj.GetValue('logradouro').Value;
+      memo_Localidade.Text :=  JSONObj.GetValue('localidade').Value;
+      memo_Uf.Text :=  JSONObj.GetValue('uf').Value;
+      memo_DDD.Text :=  JSONObj.GetValue('ddd').Value;
+      memo_Ibge.Text :=  JSONObj.GetValue('ibge').Value;
+      memo_Bairro.Text :=  JSONObj.GetValue('bairro').Value;
+      memo_Siafi.Text :=  JSONObj.GetValue('siafi').Value;
+
+    end;
+
+end;
+
+
+// Evento do acionamento do BTN limpar.
+procedure TForm1.BTN_LIMPARClick(Sender: TObject);
+begin
+
+  // Função para limpar os dados.
+
+  if Length(INPUT_NUMBER_CEP.Text) = 0 then
+    begin
+
+      Application.MessageBox('Todos os Campos de preenchimento estão Limpos!', 'AVISO!');
+
+    end
+
+  else
+    begin
+
+      INPUT_NUMBER_CEP.Clear;
+      memo_Cep.Clear;
+      memo_Logradouro.Clear;
+      memo_Localidade.Clear;
+      memo_Uf.Clear;
+      memo_DDD.Clear;
+      memo_Ibge.Clear;
+      memo_Bairro.Clear;
+      memo_Siafi.Clear;
+
+    end;
+
+    end;
+
+
+// Evento de quando precionar a tecla "ENTER" como um atalho p/ confimar a ação para pesquisar.
+procedure TForm1.INPUT_NUMBER_CEPKeyPress(Sender: TObject; var Key: Char);
+begin
+
+  if key = #13 then
+  begin
+
+      BTN_BUSCAR.Click
+
+  end;
+
+end;
+
+end.
