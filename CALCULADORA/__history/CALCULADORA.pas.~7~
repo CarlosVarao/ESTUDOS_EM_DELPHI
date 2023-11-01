@@ -9,6 +9,7 @@ uses
 type
   TTELA_CALCULADORA = class(TForm)
     painel_Resultado: TPanel;
+    label_Resultado: TLabel;
     painel_numeros: TPanel;
     label_DireitosAutorais: TLabel;
     BTN_01: TButton;
@@ -29,19 +30,12 @@ type
     BTN_SOMAR: TButton;
     BTN_IGUAL: TButton;
     BTN_LIMPAR: TButton;
-    painel_result: TEdit;
+    procedure BTN_01Click(Sender: TObject);
+    procedure BTN_02Click(Sender: TObject);
     procedure BTN_SOMARClick(Sender: TObject);
-    procedure BTN_SUBTRAIRClick(Sender: TObject);
-    procedure BTN_MULTIPLICARClick(Sender: TObject);
-    procedure BTN_DIVIDIRClick(Sender: TObject);
-    procedure numerosClick(Sender: TObject);
+    procedure BTN_LIMPARClick(Sender: TObject);
   private
     { Private declarations }
-
-    var FOperacao: string;
-    var FTotal: Double;
-    var FUltimoNumero: Double;
-
   public
     { Public declarations }   
   end;
@@ -53,38 +47,47 @@ implementation
 
 {$R *.dfm}
 
-procedure TTELA_CALCULADORA.numerosClick(Sender: TObject);
+procedure TTELA_CALCULADORA.BTN_01Click(Sender: TObject);
 begin
 
-  painel_result.Text :=  painel_result.Text + TButton(Sender).Caption;
+   if label_Resultado.Caption = '0' then
+  begin
+    label_Resultado.Caption := '1'
+  end
+
+  else
+  begin
+      label_Resultado.Caption := label_Resultado.Caption + '1';
+  end;
 
 end;
 
-procedure TTELA_CALCULADORA.BTN_DIVIDIRClick(Sender: TObject);
+procedure TTELA_CALCULADORA.BTN_02Click(Sender: TObject);
 begin
 
-  FOperacao := '/';
+   if label_Resultado.Caption = '0' then
+  begin
+    label_Resultado.Caption := '2'
+  end
+
+  else
+  begin
+      label_Resultado.Caption := label_Resultado.Caption + '2';
+  end;
 
 end;
 
-procedure TTELA_CALCULADORA.BTN_MULTIPLICARClick(Sender: TObject);
+procedure TTELA_CALCULADORA.BTN_LIMPARClick(Sender: TObject);
 begin
 
-  FOperacao := '*';
+  label_Resultado.Caption := '0'
 
 end;
 
 procedure TTELA_CALCULADORA.BTN_SOMARClick(Sender: TObject);
 begin
 
-  FOperacao := '+';
-
-end;
-
-procedure TTELA_CALCULADORA.BTN_SUBTRAIRClick(Sender: TObject);
-begin
-
-  FOperacao := '-';
+    label_Resultado.Caption := label_Resultado.Caption + '+';
 
 end;
 

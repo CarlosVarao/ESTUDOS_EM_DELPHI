@@ -30,18 +30,8 @@ type
     BTN_IGUAL: TButton;
     BTN_LIMPAR: TButton;
     painel_result: TEdit;
-    procedure BTN_SOMARClick(Sender: TObject);
-    procedure BTN_SUBTRAIRClick(Sender: TObject);
-    procedure BTN_MULTIPLICARClick(Sender: TObject);
-    procedure BTN_DIVIDIRClick(Sender: TObject);
-    procedure numerosClick(Sender: TObject);
   private
     { Private declarations }
-
-    var FOperacao: string;
-    var FTotal: Double;
-    var FUltimoNumero: Double;
-
   public
     { Public declarations }   
   end;
@@ -52,40 +42,5 @@ var
 implementation
 
 {$R *.dfm}
-
-procedure TTELA_CALCULADORA.numerosClick(Sender: TObject);
-begin
-
-  painel_result.Text :=  painel_result.Text + TButton(Sender).Caption;
-
-end;
-
-procedure TTELA_CALCULADORA.BTN_DIVIDIRClick(Sender: TObject);
-begin
-
-  FOperacao := '/';
-
-end;
-
-procedure TTELA_CALCULADORA.BTN_MULTIPLICARClick(Sender: TObject);
-begin
-
-  FOperacao := '*';
-
-end;
-
-procedure TTELA_CALCULADORA.BTN_SOMARClick(Sender: TObject);
-begin
-
-  FOperacao := '+';
-
-end;
-
-procedure TTELA_CALCULADORA.BTN_SUBTRAIRClick(Sender: TObject);
-begin
-
-  FOperacao := '-';
-
-end;
 
 end.

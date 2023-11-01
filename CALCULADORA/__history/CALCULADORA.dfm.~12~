@@ -52,7 +52,6 @@ object TELA_CALCULADORA: TTELA_CALCULADORA
       ParentFont = False
       ReadOnly = True
       TabOrder = 0
-      Text = '0'
     end
   end
   object painel_numeros: TPanel

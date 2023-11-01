@@ -40,7 +40,6 @@ type
 
     var FOperacao: string;
     var FTotal: Double;
-    var FUltimoNumero: Double;
 
   public
     { Public declarations }   
