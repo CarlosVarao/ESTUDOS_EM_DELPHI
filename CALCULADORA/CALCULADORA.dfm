@@ -4,8 +4,8 @@ object TELA_CALCULADORA: TTELA_CALCULADORA
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'CALCULADORA'
-  ClientHeight = 415
-  ClientWidth = 370
+  ClientHeight = 414
+  ClientWidth = 366
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
