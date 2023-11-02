@@ -1,0 +1,55 @@
+------------- Operadores Aritméticos -------------
+
+As operações envolvendo apenas números inteiros resultam sempre em um número inteiro. As operações envolvendo número inteiro com número real resulta sempre em um número real.
+
+Adição:  +
+Subtração:  -
+Multiplicação:  *
+Divisão de reais:  /
+Divisão de inteiros:  Div
+Resto da divisão de inteiros:  Mod
+
+
+------------- Operador de Atribuição -------------
+
+A atribuição de valores é feita usando os caracteres  dois pontos e igual (:=).
+A esquerda deve estar apenas o nome da variável, enquanto que na direita podem estar constantes, variáveis ou expressões que correspondam ao tipo de dados armazenáveis na variável.
+
+A:=5;
+D:=  (a-b)/3;
+Nome:=’Maria’;
+
+------------- Operador de Atribuição -------------
+
+Os operadores lógicos ou operadores booleanos são utilizados quando é necessário trabalhar com o relacionamento de duas ou mais condições ao mesmo tempo, dentro de um if / else ou dentro de uma estrutura de teste de um loop.
+
+Lógico:  AND ( E )
+
+OU Lógico:  OR ( OU )
+
+NÃO Lógico:  NOT ( NÃO)
+
+
+nome := 'i';
+vogal := 'u';
+
+if (nome <> '') and (vogal <> '') then
+ShowMessage('É uma string')
+else
+ShowMessage('Não é uma string');
+
+------------- Operadores Relacionais -------------
+
+Maior que:  > 
+Menor que:  < 
+Maior ou igual a:  >=
+Menor ou igual a:  <=
+Igual a:  =
+Diferente de:  <> 
+
+------------- Comentários -------------
+//  Linha de Comentário
+{} Texto de Comentário - várias linhas
+
+
+
