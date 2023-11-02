@@ -1,0 +1,178 @@
+----------- Variáveis -----------
+
+Variáveis são áreas reservadas da memoria de um computador identificada por um nome, onde você pode guardar um determinado valor enquanto o seu programa estiver sendo executado, e assim como o próprio nome diz, 
+o valor que essa área da memoria recebe, pode ser alterado durante a execução do programa.
+
+
+Ex: 
+
+Var
+
+nome: string; = 'Olá, Mundo!'
+
+numeroInteiro: integer; = 42
+
+numeroFloat: Double; = 3.14159
+
+numeroFloatMonametico: Currency; = 49.99
+
+verdadeMentira: Boolean ;  Boolean = True ou False
+
+
+----------- Constantes -----------
+
+constantes são áreas da memoria, onde seu valor é definido na declaração da constante e não pode ser alterado posteriormente na execução do programa.
+
+Ex: 
+
+const
+
+nome: string; = 'Olá, Mundo!'
+
+numeroInteiro: integer; = 42
+
+numeroFloat: Double; = 3.14159
+
+numeroFloatMonametico: Currency; = 49.99
+
+verdadeMentira: Boolean ;  Boolean = True ou False
+
+--------------------------------------------------------
+
+Tipos mais usados:
+
+Integer -2147483648 a 2147483647
+Double - 5.0 x 10^-324 a 1.7 x 10^308
+Currency - -922337203685477.5808 a 922337203685477.5807
+Boolean - False ou True
+String - Pode armazenar uma cadeia de até 255 caracteres
+
+--------------------------------------------------------
+
+Tipos de Variáveis Inteiras: 
+
+Shortint -128 a 127
+Smallint -32768 a 32767
+Longint -2147483648 a 2147483647
+Int64 -2^63 a 2^63-1
+Byte - 0 a 255
+Word - 0 a 65535
+Longword - 0 a 4294967295
+Integer -2147483648 a 2147483647
+Cardinal - 0 a 2147483647
+
+--------------------------------------------------------
+
+Tipos de Variáveis Reais( Variáveis de Ponto Flutuante )
+
+Real48 - 2.9 x 10^-39 a 1.7 x 10^38
+Single - 1.5 x 10^-45 a 3.4 x 10^38
+Double - 5.0 x 10^-324 a 1.7 x 10^308
+Extended - 3.6 x 10^-4951 a 1.1 x 10^4932
+Comp - -2^63 a 2^63+1
+Currency - -922337203685477.5808 a 922337203685477.5807
+Real - 5.0 x 10^-324 a 1.7 x 10^308
+
+--------------------------------------------------------
+
+Tipos de Variáveis Booleanas( Variáveis de Tipo Lógica )
+
+Boolean - False ou True
+
+--------------------------------------------------------
+
+Tipo de Variáveis Alfanumérico( Variáveis do Tipo Caractere )
+
+Char - Pode armazenar um caractere ASCII
+AnsiChar - Pode armazenar um caractere ASCII
+WideChar - Pode armazenar um caractere Unicode
+ShortString - Pode armazenar uma cadeia de até 255 caracteres
+String - Pode armazenar uma cadeia de até 255 caracteres
+AnsiString - Pode armazenar uma cadeia ilimitada* de caracteres( Char )
+WideString - Pode armazenar uma cadeia ilimitada* de caracteres( WidChar)
+
+
+
+----------------------CORPO DO CODIGO -------------------
+
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TForm1 = class(TForm)
+    Edit1: TEdit;
+    Button1: TButton;
+
+
+  private
+    { Private declarations }
+	Private = Métodos, variáveis, const, propriedades NÃO acessíveis para todas as outras Units, Forms, e Descendentes dele que estão fora da Unit onde ele está.  Mas Acessíveis para Outras Classes da mesma Unit.
+	
+
+  public
+    { Public declarations }
+	Public = Métodos, variáveis, const, propriedades visíveis para todas as outras Units, Forms e Classe
+  end;
+
+
+var
+  Form1: TForm1;
+	Todas as variaveis e const colocadas aqui, serão globais.
+
+
+implementation
+
+{$R *.dfm}
+
+
+
+
+procedure TForm1.Button1Click(Sender: TObject);
+
+var
+teste: string;
+
+Todas as variaveis e const colocadas aqui, apenas caberão nomente nesse escopo.
+
+begin
+
+teste:= 'teste';
+
+end;
+
+end.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
