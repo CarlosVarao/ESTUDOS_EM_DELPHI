@@ -1,0 +1,82 @@
+----------------- .PAS Delphi arquivo de origem ----------------- 
+
+arquivo de origem PAS devem ser armazenados em Controle de origem
+Em Delphi, arquivos PAS são sempre o código fonte para qualquer unidade ou um formulário. Arquivos de origem da unidade contêm a maior parte do código em um aplicativo. 
+A unidade contém o código-fonte para qualquer manipuladores de eventos ligados aos eventos do formulário ou os componentes que ele contém. Podemos editar arquivos. 
+Pas usando o editor de código Delphi. Não exclua arquivos.
+
+
+----------------- .DFM  Formulário de Delphi ----------------- 
+
+Esses arquivos são sempre emparelhado com arquivos. Pas. Arquivo dfm contém os detalhes (propriedades & visual) dos objetos contidos em um formulário. 
+O cuidado deve ser usado em alterar esse arquivo como alterações que poderia impedir o IDE de ser capaz de carregar o formulário. Não exclua arquivos. Dfm.
+
+
+----------------- .DPR Delphi Projeto ----------------- 
+
+O arquivo DPR é o arquivo central para um projeto delphi (um arquivo. Dpr por um projeto), na verdade, um arquivo de origem Pascal. 
+Ele serve como o principal ponto de entrada para o executável (sendo a estrutura de inicialização do sistema ). O dpr contém as referências para os outros arquivos no projeto e os formulários ligações com suas unidades associadas. 
+Apesar de podermos modificar o arquivo. Dpr, não devemos modificá-lo manualmente. Não exclua arquivos. Dpr.
+
+
+----------------- .DCU Delphi Compiled Unit ----------------- 
+
+Uma unidade compilado (. Pas) de arquivos. Por padrão a versão compilada de cada unidade é armazenado em um arquivo no formato binário separado com o mesmo nome que o arquivo da unidade, mas com a extensão. 
+DCU (Delphi unidade compilada). Por exemplo unit1.dcu contém o código e os dados declarados no arquivo Unit1.pas. Quando você reconstruir um projeto, as unidades individuais não são recompilados, a menos que sua fonte (. PAS) 
+arquivos foram alterados desde a última compilação, ou seus arquivos. DCU não pode ser encontrado. Excluir com segurança. Arquivo dcu porque Delphi recria-lo quando você compilar o aplicativo.
+
+
+----------------- .RES  Windows Resource File ----------------- 
+
+Um arquivo de recursos do Windows, gerado automaticamente pelo Delphi e exigidas pelo processo de compilação. 
+Este arquivo no formato binário contém o recurso de informação de versão (se necessário) e principal ícone do aplicativo. 
+Arquivo também pode conter outros recursos usados dentro do aplicativo.
+
+
+----------------- .EXE Executável do aplicativo ----------------- 
+
+É o asquivo compilado gerado pelo o Delphi no formato para que o usuario ultilize para suas competencias.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
