@@ -49,8 +49,7 @@ var
   formCalculoImc: TformCalculoImc;
 
   // Variaveis globais
-  alturaString: string;
-  converteAlturaString: Double;
+  altura: Double;
   peso: Double;
   resultado: Currency;
 
@@ -61,14 +60,35 @@ implementation
 procedure TformCalculoImc.btnCalcularClick(Sender: TObject);
 begin
 
-  // Coletando os dados dos TEdit para variavais aceitando o formato com uma virgula.
-  alturaString := StringReplace(inputAltura.Text, ',', ',', [rfReplaceAll])	;
-  peso := StrToFloat(inputPeso.Text);
+  // Condição para validar se os campos de altura e peso estão preencidos.
+  if (inputAltura.Text = '') or ( inputPeso.Text = '') then
+   begin
+    Application.MessageBox('Por favor insira os dados corretos!', 'ERRO - FALHA NA OPERAÇÃO');
+   end
 
-  // Calculando os dados recebidos das variaveis e mostrando o resultado.
-  converteAlturaString := StrToFloat(alturaString);
-  resultado := peso / (converteAlturaString * converteAlturaString);
-  inputResultado.Text := FloatToStr(resultado);
+   // parei aqui, tenho que fazer uma condição onde valida se os TEdit tem letras para fazer a trava. !!
+  else if (inputAltura.Text = string) or ( inputPeso.Text = string) then
+    begin
+       Application.MessageBox('Por favor insira os dados corretos e não letras!', 'ERRO - FALHA NA OPERAÇÃO');
+    end
+
+  // Condição para validar se o campo do sexo estão preencido.
+  else if (ComboBoxSexo.text = 'Selecione') then
+    begin
+    Application.MessageBox('Por favor selecione o sexo !', 'ERRO - FALHA NA OPERAÇÃO');
+    end
+
+  // Condição para executar o codigo caso todos os requisitos estão corretos.
+  else
+    begin
+      // Coletando os dados dos TEdit para variáveis aceitando o formato com uma vírgula.
+      altura := StrToFloat(inputAltura.Text);
+      peso := StrToFloat(inputPeso.Text);
+
+      // Calculando os dados recebidos das variáveis e mostrando o resultado.
+      resultado := peso / (altura * altura);
+      inputResultado.Text := FloatToStr(resultado);
+    end;
 
 end;
 

@@ -4,8 +4,8 @@ object formCalculoImc: TformCalculoImc
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'CALCULO DE IMC'
-  ClientHeight = 438
-  ClientWidth = 620
+  ClientHeight = 436
+  ClientWidth = 612
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -340,7 +340,7 @@ object formCalculoImc: TformCalculoImc
     end
     object inputResultado: TEdit
       Left = 8
-      Top = 300
+      Top = 295
       Width = 247
       Height = 36
       Alignment = taCenter
@@ -359,10 +359,8 @@ object formCalculoImc: TformCalculoImc
       ParentCtl3D = False
       ParentFont = False
       ParentShowHint = False
-      ReadOnly = True
-      ShowHint = True
+      ShowHint = False
       TabOrder = 4
-      TextHint = 'Ex : 24,69'
     end
     object btnCalcular: TButton
       Left = 8
