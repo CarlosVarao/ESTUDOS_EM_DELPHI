@@ -75,7 +75,7 @@ begin
   // Condição para validar se o campo do sexo estão preencido.
   else if (ComboBoxSexo.text = 'Selecione') then
     begin
-    Application.MessageBox('Por favor selecione o sexo !', 'ERRO - FALHA NA OPERAÇÃO');
+      Application.MessageBox('Por favor selecione o sexo !', 'ERRO - FALHA NA OPERAÇÃO');
     end
 
   // Condição para executar o codigo caso todos os requisitos estão corretos.
@@ -96,10 +96,19 @@ procedure TformCalculoImc.btnLimparClick(Sender: TObject);
 begin
 
   // Limpando os campos dos resultados que foram mostrados..
-  inputAltura.Clear;
-  inputPeso.Clear;
-  inputResultado.Clear;
-  ComboBoxSexo.Text := 'Selecione';
+
+  if (inputAltura.Text = '') and (inputPeso.Text = '') and (inputResultado.Text = '') then
+  begin
+    Application.MessageBox('Todos os dados limpos !', 'ERRO - FALHA NA OPERAÇÃO');
+  end
+
+  else
+  begin
+    inputAltura.Clear;
+    inputPeso.Clear;
+    inputResultado.Clear;
+    ComboBoxSexo.Text := 'Selecione';
+  end;
 
 end;
 

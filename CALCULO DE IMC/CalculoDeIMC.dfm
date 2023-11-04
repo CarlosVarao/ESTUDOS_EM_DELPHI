@@ -4,8 +4,8 @@ object formCalculoImc: TformCalculoImc
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'CALCULO DE IMC'
-  ClientHeight = 435
-  ClientWidth = 608
+  ClientHeight = 433
+  ClientWidth = 600
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -87,7 +87,7 @@ object formCalculoImc: TformCalculoImc
     end
     object Label5: TLabel
       Left = 25
-      Top = 286
+      Top = 291
       Width = 110
       Height = 33
       Alignment = taCenter
@@ -97,7 +97,7 @@ object formCalculoImc: TformCalculoImc
     end
     object Label6: TLabel
       Left = 25
-      Top = 333
+      Top = 338
       Width = 110
       Height = 33
       Alignment = taCenter
@@ -181,6 +181,7 @@ object formCalculoImc: TformCalculoImc
     ParentBackground = False
     ParentCtl3D = False
     TabOrder = 1
+    TabStop = True
     StyleElements = [seFont, seClient]
     object LabelAltura: TLabel
       Left = 10
@@ -295,7 +296,7 @@ object formCalculoImc: TformCalculoImc
     end
     object inputPeso: TEdit
       Left = 8
-      Top = 173
+      Top = 172
       Width = 247
       Height = 36
       Alignment = taCenter
@@ -347,7 +348,7 @@ object formCalculoImc: TformCalculoImc
       AutoSize = False
       BevelInner = bvNone
       BevelOuter = bvNone
-      Ctl3D = False
+      Ctl3D = True
       Font.Charset = DEFAULT_CHARSET
       Font.Color = clWindowText
       Font.Height = -21
@@ -376,6 +377,7 @@ object formCalculoImc: TformCalculoImc
       Top = 352
       Width = 112
       Height = 40
+      Cursor = crHandPoint
       Caption = 'LIMPAR'
       TabOrder = 6
       OnClick = btnLimparClick
