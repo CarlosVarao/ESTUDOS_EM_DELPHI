@@ -8,6 +8,15 @@ Repositório sobre meus estudos nessa linguagem !
   <p> No meu programa, incorporei a funcionalidade de consumir uma API (utilizando o CEP) para que, ao preencher o campo de busca com um CEP específico, ele automaticamente recupere e exiba as informações associadas a esse CEP. </p>
 </div>
 
+##
+
+<br>
+<div align="center">
+  <li list-style="circle"> N° 2 Calculadora de IMC : </li> <br> 
+  <img alt="clone-discord" src="CALCULO DE IMC/assets/Demostração.gif"> <br><br>
+  <p> No meu programa de calculadora de IMC, Verifique seu Índice de Massa Corporal de forma simples e rápida. Cuide da sua saúde e bem-estar. </p>
+</div>
+
 
 
 
