@@ -63,28 +63,24 @@ begin
   // Condição para validar se os campos de altura e peso estão preencidos.
   if (inputAltura.Text = '') or ( inputPeso.Text = '') then
    begin
-    Application.MessageBox('Por favor insira os dados corretos!', 'ERRO - FALHA NA OPERAÇÃO');
+    Application.MessageBox('Por favor insira os dados !', 'ERRO - FALHA NA OPERAÇÃO', MB_ICONERROR);
    end
 
    // Condição para validar se os campos de altura e peso estão sendo preenchidos com numeros e não com texto.
   else if not (TryStrToFloat(inputAltura.Text, altura) and TryStrToFloat(inputPeso.Text, peso)) then
     begin
-       Application.MessageBox('Por favor insira os dados corretos e não letras!', 'ERRO - FALHA NA OPERAÇÃO');
+       Application.MessageBox('Por favor insira os dados corretos e não letras!','ERRO - FALHA NA OPERAÇÃO', MB_ICONERROR);
     end
 
   // Condição para validar se o campo do sexo estão preencido.
   else if (ComboBoxSexo.text = 'Selecione') then
     begin
-      Application.MessageBox('Por favor selecione o sexo !', 'ERRO - FALHA NA OPERAÇÃO');
+      Application.MessageBox('Por favor selecione o sexo !', 'ERRO - FALHA NA OPERAÇÃO', MB_ICONERROR);
     end
 
   // Condição para executar o codigo caso todos os requisitos estão corretos.
   else
     begin
-      // Coletando os dados dos TEdit para variáveis aceitando o formato com uma vírgula.
-      altura := StrToFloat(inputAltura.Text);
-      peso := StrToFloat(inputPeso.Text);
-
       // Calculando os dados recebidos das variáveis e mostrando o resultado.
       resultado := peso / (altura * altura);
       inputResultado.Text := FloatToStr(resultado);
@@ -99,7 +95,7 @@ begin
 
   if (inputAltura.Text = '') and (inputPeso.Text = '') and (inputResultado.Text = '') then
   begin
-    Application.MessageBox('Todos os dados limpos !', 'ERRO - FALHA NA OPERAÇÃO');
+    Application.MessageBox('Todos os dados limpos !', 'ERRO - FALHA NA OPERAÇÃO', MB_ICONERROR);
   end
 
   else
