@@ -4,8 +4,8 @@ object formCalculoImc: TformCalculoImc
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'CALCULO DE IMC'
-  ClientHeight = 436
-  ClientWidth = 612
+  ClientHeight = 435
+  ClientWidth = 608
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -310,7 +310,6 @@ object formCalculoImc: TformCalculoImc
       Font.Name = 'Segoe UI'
       Font.Style = []
       MaxLength = 3
-      NumbersOnly = True
       ParentCtl3D = False
       ParentFont = False
       ParentShowHint = False
@@ -359,8 +358,9 @@ object formCalculoImc: TformCalculoImc
       ParentCtl3D = False
       ParentFont = False
       ParentShowHint = False
-      ShowHint = False
+      ShowHint = True
       TabOrder = 4
+      TextHint = 'Ex : 18,5'
     end
     object btnCalcular: TButton
       Left = 8

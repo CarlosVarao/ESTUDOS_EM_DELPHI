@@ -66,8 +66,8 @@ begin
     Application.MessageBox('Por favor insira os dados corretos!', 'ERRO - FALHA NA OPERAÇÃO');
    end
 
-   // parei aqui, tenho que fazer uma condição onde valida se os TEdit tem letras para fazer a trava. !!
-  else if (inputAltura.Text = string) or ( inputPeso.Text = string) then
+   // Condição para validar se os campos de altura e peso estão sendo preenchidos com numeros e não com texto.
+  else if not (TryStrToFloat(inputAltura.Text, altura) and TryStrToFloat(inputPeso.Text, peso)) then
     begin
        Application.MessageBox('Por favor insira os dados corretos e não letras!', 'ERRO - FALHA NA OPERAÇÃO');
     end
