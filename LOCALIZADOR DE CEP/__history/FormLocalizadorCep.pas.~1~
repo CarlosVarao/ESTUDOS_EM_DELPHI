@@ -61,29 +61,24 @@ procedure TForm1.BTN_BUSCARClick(Sender: TObject);
   cep: string;
 
   // Variaveis para coletar os dados do JSON.
-  DadosJSON: string;
-  manipularJSONObj: TJSONObject;
+  JSONData: string;
+  JSONObj: TJSONObject;
 
 begin
 
-  // Coletando o CEP dentro campo para fazer a busca.
+  // Colotando os numeros do CEP dentro  campo.
   cep := INPUT_NUMBER_CEP.Text;
 
-  // Teste logico para saber se o campo foi preenchido.
-  if INPUT_NUMBER_CEP.Text = '' then
+
+  // Teste logico para saber se o numero é valido.
+  if (Length(INPUT_NUMBER_CEP.Text) < 7) then
     Begin
 
-       Application.MessageBox('Por favor Digite o CEP','ERRO DE BUSCA !', MB_ICONERROR);
+       Application.MessageBox('Por favor Digite o CEP correto!','ERRO DE BUSCA !');
 
     End
 
-  // Teste logico para saber se o campo foi preenchido com a QTD de numeros validos.
-  else if Length(INPUT_NUMBER_CEP.Text) < 7 then
-   begin
-      Application.MessageBox('Por favor Digite o CEP CORRETO COM 8 NUMEROS !','ERRO DE BUSCA !', MB_ICONERROR);
-   end
-
-  // Teste logico para fazer a função de coletar os dados inseridos no campo de busca do cep.
+  // Teste logico para fazzer a função de coletar as IF do cep.
   else
     begin
 
@@ -93,19 +88,19 @@ begin
 
 
       // Função para coletar os dados da API e converter o JSON p/ extração de dados.
-      DadosJSON := RESTResponse1.Content;
-      manipularJSONObj := TJSONObject.ParseJSONValue(DadosJSON) as TJSONObject;
+      JSONData := RESTResponse1.Content;
+      JSONObj := TJSONObject.ParseJSONValue(JSONData) as TJSONObject;
 
 
       // Função para coletar dadpos do JSON para variavel.
-      memo_Cep.Text :=  manipularJSONObj.GetValue('cep').Value;
-      memo_Logradouro.Text :=  manipularJSONObj.GetValue('logradouro').Value;
-      memo_Localidade.Text :=  manipularJSONObj.GetValue('localidade').Value;
-      memo_Uf.Text :=  manipularJSONObj.GetValue('uf').Value;
-      memo_DDD.Text :=  manipularJSONObj.GetValue('ddd').Value;
-      memo_Ibge.Text :=  manipularJSONObj.GetValue('ibge').Value;
-      memo_Bairro.Text :=  manipularJSONObj.GetValue('bairro').Value;
-      memo_Siafi.Text :=  manipularJSONObj.GetValue('siafi').Value;
+      memo_Cep.Text :=  JSONObj.GetValue('cep').Value;
+      memo_Logradouro.Text :=  JSONObj.GetValue('logradouro').Value;
+      memo_Localidade.Text :=  JSONObj.GetValue('localidade').Value;
+      memo_Uf.Text :=  JSONObj.GetValue('uf').Value;
+      memo_DDD.Text :=  JSONObj.GetValue('ddd').Value;
+      memo_Ibge.Text :=  JSONObj.GetValue('ibge').Value;
+      memo_Bairro.Text :=  JSONObj.GetValue('bairro').Value;
+      memo_Siafi.Text :=  JSONObj.GetValue('siafi').Value;
 
     end;
 
@@ -121,7 +116,7 @@ begin
   if Length(INPUT_NUMBER_CEP.Text) = 0 then
     begin
 
-      Application.MessageBox('Todos os Campos de preenchimento estão Limpos!', 'AVISO!', MB_ICONERROR);
+      Application.MessageBox('Todos os Campos de preenchimento estão Limpos!', 'AVISO!');
 
     end
 

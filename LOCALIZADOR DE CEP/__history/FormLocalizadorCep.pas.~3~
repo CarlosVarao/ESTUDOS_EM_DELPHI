@@ -121,7 +121,7 @@ begin
   if Length(INPUT_NUMBER_CEP.Text) = 0 then
     begin
 
-      Application.MessageBox('Todos os Campos de preenchimento estão Limpos!', 'AVISO!', MB_ICONERROR);
+      Application.MessageBox('Todos os Campos de preenchimento estão Limpos!', 'AVISO!');
 
     end
 
