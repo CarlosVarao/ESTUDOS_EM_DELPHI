@@ -35,16 +35,15 @@ type
     procedure BTN_MULTIPLICARClick(Sender: TObject);
     procedure BTN_DIVIDIRClick(Sender: TObject);
     procedure numerosClick(Sender: TObject);
-    procedure Calcular;
   private
     { Private declarations }
+  public
+    { Public declarations }
 
     var FOperacao: string;
     var FTotal: Double;
     var FUltimoNumero: Double;
-    
-  public
-    { Public declarations }
+
   end;
 
 var
@@ -91,15 +90,6 @@ procedure TTELA_CALCULADORA.BTN_SUBTRAIRClick(Sender: TObject);
 begin
 
   FOperacao := '-';
-
-end;
-
-procedure TTELA_CALCULADORA.Calcular;
-begin
-
-  case FOperacao of
-    '+' : FTotal := FTotal + StrToFloat(painel_result.Text)
-  end;  
 
 end;
 
